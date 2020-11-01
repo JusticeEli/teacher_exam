@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/questionEdtTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Question"
+            app:boxBackgroundMode="filled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/achoiceEdtTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="A"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/questionEdtTxt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bchoiceEdtTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:hint="B"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/achoiceEdtTxt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:inputType="text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            tools:visibility="visible" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cchoiceEdtTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:hint="C"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/bchoiceEdtTxt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dchoiceEdtTxt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:hint="Time Taken to complete question in seconds"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/cchoiceEdtTxt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="76dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="save"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dchoiceEdtTxt" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+
