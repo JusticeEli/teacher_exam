@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:hint="CODE"
+        android:hint="School Code"
         app:boxBackgroundMode="filled">
 
         <com.google.android.material.textfield.TextInputEditText

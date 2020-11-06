@@ -2,6 +2,7 @@ package com.justice.teacherexam;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -21,8 +22,8 @@ import static com.justice.teacherexam.ApplicationClass.COLLECTION_RESULTS;
 import static com.justice.teacherexam.ApplicationClass.STUDENT_ID;
 
 public class TestCompleteActivity extends AppCompatActivity {
-
-    private FirebaseFirestore firebaseFirestore;
+    private static final String TAG = "TestCompleteActivity";
+    private FirebaseFirestore firebaseFirestore=FirebaseFirestore.getInstance();
 
     private TextView resultCorrect;
     private TextView resultWrong;
@@ -34,6 +35,7 @@ public class TestCompleteActivity extends AppCompatActivity {
 
 
     private ProgressBar resultProgress;
+    private ProgressBar progressBar;
 
     private Button resultHomeBtn;
     private String studentId;
@@ -44,12 +46,12 @@ public class TestCompleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_complete);
         studentId = getIntent().getStringExtra(STUDENT_ID);
         initWidgets();
-        init_firestore();
         setOnClickListeners();
         getResults();
     }
 
     private void getResults() { //Get Results
+        Log.d(TAG, "getResults: fetching results...");
         firebaseFirestore
                 .collection(COLLECTION_ALL_RESULTS)
                 .document(ApplicationClass.code)
@@ -58,6 +60,8 @@ public class TestCompleteActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful() && task.getResult().exists()) {
+                    Log.d(TAG, "onComplete: success fetching results...");
+                    progressBar.setVisibility(View.GONE);
                     Student student = task.getResult().toObject(Student.class);
                     Results results = student.getResults();
                     Long correct = results.getCorrect();
@@ -105,13 +109,11 @@ public class TestCompleteActivity extends AppCompatActivity {
         resultHomeBtn = findViewById(R.id.results_home_btn);
         resultPercent = findViewById(R.id.results_percent);
         resultProgress = findViewById(R.id.results_progress);
+        progressBar = findViewById(R.id.progressBar);
 
     }
 
-    private void init_firestore() {
-        firebaseFirestore = FirebaseFirestore.getInstance();
 
-    }
 }
 
 

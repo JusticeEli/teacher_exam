@@ -3,25 +3,36 @@
     package="com.justice.teacherexam">
 
     <application
-        android:allowBackup="true"
         android:name=".ApplicationClass"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_teacher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_teacher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherFirstPageActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".TeacherFirstPageActivity"
+            android:label="Questions"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Teacher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionAddActivity" />
-        <activity android:name=".QuestionActivity" />
-        <activity android:name=".StudentsMarksActivity" />
-        <activity android:name=".TestCompleteActivity"/>
+        <activity
+            android:name=".QuestionAddActivity"
+            android:label="Add Quiz" />
+        <activity
+            android:name=".QuestionActivity"
+            android:label="Question" />
+        <activity
+            android:name=".StudentsMarksActivity"
+            android:label="Results" />
+        <activity
+            android:name=".TestCompleteActivity"
+            android:label="Result"
+            android:theme="@style/NoACtionBar" />
     </application>
 
 </manifest>
